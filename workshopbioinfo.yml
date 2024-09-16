@@ -5,6 +5,7 @@ channels:
   - conda-forge
   - bioconda
   - defaults
+  - nanoporetech
 
 dependencies:
   - zlib
@@ -30,3 +31,4 @@ dependencies:
   - nanoplot
   - gzip
   - trimmomatic
+  - modkit
