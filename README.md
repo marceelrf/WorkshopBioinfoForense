@@ -26,3 +26,23 @@ Reinicie o sistema.
 
 `conda activate workshopbioinfo`
 
+### Instale o HipSTR
+
+~Infelizmente~ O HipSTR não está disponível para instalação via conda. Então faremos manualmente. Para isso primeiro vamos clonar o repositório do github com os códigos.
+Para garantir reprodutibilidade vamos fazer isso na pasta home. O comando abaixo entra na pasta home.
+
+`cd ~`
+
+Em seguida vamos clonar o repositório:
+
+`git clone https://github.com/HipSTR-Tool/HipSTR`
+
+Entramos na pasta HipSTR e fazemos a instalação com `make`.
+
+`cd HipSTR`
+
+`make`
+
+Para rodar o HipSTR:
+
+`./HipSTR --help`
