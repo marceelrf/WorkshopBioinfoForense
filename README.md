@@ -125,7 +125,7 @@ Fazer esse comando para todas as amostras.
 
 Link tutorial de ajuda: 
 
-### COMANDO DO DIPSTR
+### COMANDO DO HIPSTR
 
 - Antes de correr o comando do HipSTR, verifiquem que todas as amostras que serão incluidas no comando, já tenham o índice (Arquivo fai, gerado com samtools index)
 - Preparar o comando previamente em algum arquivo de texto, substituindo nome_da_amostra1 pelo nome real da amostra.
@@ -133,7 +133,7 @@ Link tutorial de ajuda:
 
 ```jsx
 cd rota_da_pasta
---bams nome_da_amostra1.bam,nome_da_amostra2.bam --fasta GRCh38_full_analysis_set_plus_decoy_hla.fa --regions regionsx.bed --str-vcf nome_de_saida.vcf.gz --min-reads 8 --def-stutter-model --max-flank-indel 0.50 --max-str-len 127 --viz-out aln.viz.gz
+HipSTR --bams nome_da_amostra1.bam,nome_da_amostra2.bam --fasta GRCh38_full_analysis_set_plus_decoy_hla.fa --regions regionsx.bed --str-vcf nome_de_saida.vcf.gz --min-reads 8 --def-stutter-model --max-flank-indel 0.50 --max-str-len 127 --viz-out aln.viz.gz
 ```
 
 Link tutoria de ajuda:
@@ -144,8 +144,12 @@ INTERPRETAÇÃO DO ARQUIVO DE SAÍDA
 - Podem abrir com Excel e realizar a interpretação dos dados para genotipar as amostras. Durante a aula aprenderemos a realizar essa interpretação.
 
 ATIVIDADES DO DÍA 6
+- Extrair os valores GB e DP de todas as amostras
+- Genotipar todas as amostras, incluir valores de cobertura
 
-- Extrair os valores GB e DESPUES de todas as amostras
-- Quais são os genótipos do marcador CSF1PO na amostra tal?
-- Quais são os genótipos do marcador TPOX na amostra tal?
-- Qual é a ferramenta utiliza
+Perguntas google forms
+- Quais são os genótipos do marcador CSF1PO na amostra HG00239?
+- Quais são os genótipos do marcador TPOX na amostra NA18602?
+- Qual é o comando utilizado para criar os índices das amostras?
+- O valor DP indica a diferença de número de bases com o alelo de referênça?
+- Alguma das amostras não foi possível genotipar?
