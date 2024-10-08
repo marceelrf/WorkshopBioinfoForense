@@ -87,7 +87,7 @@ Para saber se o HipSTR foi instalado corretamente ou solicitar ajuda use:
 HipSTR --help
 ```
 
-Link com tutorial de ajuda: 
+[Tutorial de ajuda](https://drive.google.com/file/d/1H9LA6Yp8Pho_XBQOpNENhL3Egtj1B24R/view?usp=drive_link)
 
 ### GENOTIPAGEM
 
@@ -101,7 +101,7 @@ ARQUIVOS NECESSÁRIOS
 
 Estes arquivos se encontram dentro de uma pasta de google drive. O genoma de referência já possui o índice, por questões de tempo. Entretanto, vamos a criar os índices para as amostras 
 
-Link de acesso aos arquivos: https://drive.google.com/drive/folders/14ZXVyXaDAP_QvTrtizeAtrZTL8E_25GP?usp=drive_link 
+[Acesso aos arquivos](https://drive.google.com/drive/folders/14ZXVyXaDAP_QvTrtizeAtrZTL8E_25GP?usp=drive_link) 
 
 IMPORTANTE
 
@@ -123,7 +123,7 @@ samtools index nome_da_amostra.bam
 
 Fazer esse comando para todas as amostras. 
 
-Link tutorial de ajuda: 
+[Tutorial de ajuda](https://drive.google.com/file/d/1_kTWQTcX4k_adN28sEJb47drwAZAzrm0/view?usp=drive_link)
 
 ### COMANDO DO HIPSTR
 
@@ -136,7 +136,7 @@ cd rota_da_pasta
 HipSTR --bams nome_da_amostra1.bam,nome_da_amostra2.bam --fasta GRCh38_full_analysis_set_plus_decoy_hla.fa --regions regionsx.bed --str-vcf nome_de_saida.vcf.gz --min-reads 8 --def-stutter-model --max-flank-indel 0.50 --max-str-len 127 --viz-out aln.viz.gz
 ```
 
-Link tutoria de ajuda:
+[Tutoria de ajuda](https://drive.google.com/file/d/1jBNQ8lxWDYQ-L4U34WVhbenagOPWRerR/view?usp=drive_link)
 
 INTERPRETAÇÃO DO ARQUIVO DE SAÍDA
 
