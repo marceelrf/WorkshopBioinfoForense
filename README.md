@@ -26,23 +26,93 @@ Reinicie o sistema.
 
 `conda activate workshopbioinfo`
 
-### Instale o HipSTR
+# MARCADORES STRs
 
-~Infelizmente~ O HipSTR não está disponível para instalação via conda. Então faremos manualmente. Para isso primeiro vamos clonar o repositório do github com os códigos.
-Para garantir reprodutibilidade vamos fazer isso na pasta home. O comando abaixo entra na pasta home.
+Para esse curso, utilizaremos um computador virtual, devido à incompatibilidades com a nova versão do compilador C++. Portanto, teremos que baixar o computador virtual com os arquivos necessários para o curso, e virtual box que permitirá executar o computador virtual.
 
-`cd ~`
+PRIMER PASO - DESCARGAS
 
-Em seguida vamos clonar o repositório:
+1. Baixar o computador virtual Ubuntu (baixar e descomprimir o arquivo zip). 
 
-`git clone https://github.com/HipSTR-Tool/HipSTR`
+Link para baixar o computador virtual: https://drive.google.com/file/d/1Pnw3KGixyB6ur2h9zDA3zSAeHj8OzvyX/view?usp=drive_link
 
-Entramos na pasta HipSTR e fazemos a instalação com `make`.
+1. Baixar virtual box e o pacote de instalação. 
 
-`cd HipSTR`
+Link para baixar virtual box que mostrará o computador virtual Linux: https://www.virtualbox.org/wiki/Downloads
 
-`make`
+Baixar DUAS coisas deste link virtual box: 
 
-Para rodar o HipSTR:
+1. **VirtualBox Platform Packages**
+2. **VirtualBox Extension Pack**
 
-`./HipSTR --help`
+Escolher o sistema operativo do computador (windows, mac ou linux) e baixar. 
+
+<img width="1284" alt="VB" src="https://github.com/user-attachments/assets/a5fc02f6-8fd7-4ff6-a178-5047f1052f2d">
+
+Logo de instalar, escolher o computador virtual Ubuntu que baixamos no primer link. 
+
+Senha do computador virtual instalado: bioinformatica
+
+Link tutorial de ajuda: https://drive.google.com/file/d/1bPgrcmzdD3b_ELsGPKUMBllZ7G0SJR18/view?usp=drive_link
+
+## HIPSTR
+
+**H**aplotype **i**nference and **p**hasing for **S**hort **T**andem **R**epeats ou HipSTR é um programa que foi desenvolvido por Thomas Willems para capturar marcadores STRs a partir de dados de sequenciamento de nova geração. 
+
+Link do Github: 
+
+https://github.com/tfwillems/HipSTR
+
+INTSLAÇÃO
+
+Infelizmente a última versão do compilador C++ apresenta uma incompatibilidade com HipSTR. Portanto, iremos utilizar um computador virtual que já contem o programa instalado. 
+
+O computador virtual tem uma pasta chamada “curso” no desktop, onde se encontra:
+
+- O genoma de referência (arquivo.fa)
+- O índice do genoma de referência (arquivo.fai)
+- Amostras em formato bam (HG00118.bam, etc)
+- O arquivo bed com as regiões que serão analizadas
+
+Com isso, iremos correr o comando do HipSTR para genotipar essas amostras
+
+CÓMO CRIAR OS ÍNDICES DAS AMOSTRAS? 
+
+- Utilizaremos samtools index
+
+```jsx
+cd rota_da_pasta
+samtools index nome_da_amostra.bam
+```
+
+Fazer esse comando para todas as amostras. 
+
+Link tutorial de ajuda: https://drive.google.com/file/d/17vv41Hf0ezyEHzAHne1e4iPbzCemDgXN/view?usp=drive_link
+
+COMANDOS 
+
+Arquivos necessários
+
+![image](https://github.com/user-attachments/assets/e5f57a64-0194-48f6-b09f-e768901405c9)
+
+
+IMPORTANTE
+
+- Antes de correr o comando do HipSTR, verifiquem que todas as amostras que serão incluidas no comando, já tenham o seu índice (Arquivo fai, gerado com samtools index)
+- Preparar o comando previamente em algum arquivo de texto, substituindo nome_da_amostra1 pelo nome real da amostra.
+- Podem rodar varias amostras no mesmo comando, separando elas por virgulas SEM espaço, como no exemplo embaixo.
+
+```jsx
+cd rota_da_pasta
+--bams nome_da_amostra1.bam,nome_da_amostra2.bam --fasta GRCh38_full_analysis_set_plus_decoy_hla.fa --regions regionsx.bed --str-vcf nome_de_saida.vcf.gz --min-reads 8 --def-stutter-model --max-flank-indel 0.50 --max-str-len 127 --viz-out aln.viz.gz
+```
+
+Link de ajuda: https://drive.google.com/file/d/1Vzw8K7-Jh-ud7ul_0bNhKpJ4gw0zxqvo/view?usp=drive_link
+
+INTERPRETAÇÃO DO ARQUIVO DE SAÍDA
+
+HipSTR gera como arquivo de saída um arquivo vcf.gz. Logo de descomprimir o arquivo teremos um vcf. 
+
+O vcf podemos abrir com Excel e realizar a interpretação dos dados para genotipar as amostras. 
+
+Durante a aula aprenderemos a realizar essa interpretação.
