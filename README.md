@@ -55,7 +55,7 @@ Para compilar HipSTR, são necessários os seguintes pacotes:
 Se vocês estiverem executando o Ubuntu 16+, os pacotes podem ser facilmente instalados executando:
 
 ```jsx
-sudo apt install make g++ zlib1g-dev libhts-dev libbz2-dev liblzma-dev git samtools
+sudo apt install make g++ zlib1g-dev libhts-dev libbz2-dev liblzma-dev git samtools tabix
 ```
 
 ### INSTALAÇÃO DO HIPSTR
@@ -77,6 +77,7 @@ Para que HipSTR esteja disponível no computador, sem necessidade de copiar a ro
 
 ```jsx
 sudo ln -s $(pwd)/HipSTR /usr/local/bin/HipSTR
+sudo ln -s $(pwd)/VizAln /usr/local/bin/VizAln
 ```
 
  
