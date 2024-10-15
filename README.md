@@ -77,7 +77,6 @@ Para que HipSTR esteja disponível no computador, sem necessidade de copiar a ro
 
 ```jsx
 sudo ln -s $(pwd)/HipSTR /usr/local/bin/HipSTR
-sudo ln -s $(pwd)/VizAln /usr/local/bin/VizAln
 ```
 
  
